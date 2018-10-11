@@ -79,6 +79,7 @@ Since network failure happens relatively frequently, you are asked to add the fe
     
 Example Stats
 The following examples are assuming stats are reset() before running every single example. Additional test cases will be used for grading.
+
           Tweet message as tweet(“foo”,”barbar”). Then getLengthOfLongestTweet() returns 6.
           Alice follows Bob, Carl follows Bob (but fails to do so), and Bob follows Alice. getMostFollowedUser() returns “Alice”.
           Successfully tweet a message ("Alice","[any message <= 140 chars]"), then getMostProductiveUser() returns “Alice”.
