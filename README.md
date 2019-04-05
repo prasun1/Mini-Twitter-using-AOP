@@ -6,29 +6,29 @@ This repository consists of a twitter application implemented using Aspect Orien
 
 The tweet service is defined as follows:
 
+  
 
+      import java.io.IOException;
 
-    import java.io.IOException;
-
-    public interface TweetService {
-     /**
-      * @throws IllegalArgumentException if the message is more than 140 characters as measured by string length.
-      * @throws IOException if there is a network failure
-      */
-       void tweet(String user, String message) throws IllegalArgumentException, IOException;
-
+      public interface TweetService {
        /**
+        * @throws IllegalArgumentException if the message is more than 140 characters as measured by string length.
         * @throws IOException if there is a network failure
         */
-       void follow(String follower, String followee) throws IOException;
+         void tweet(String user, String message) throws IllegalArgumentException, IOException;
 
-       /**
-         * 
-        * @throws IOException if there is a network failure
-        */
-       void block(String user, String followee) throws IOException;
+         /**
+          * @throws IOException if there is a network failure
+          */
+         void follow(String follower, String followee) throws IOException;
 
-    }
+         /**
+           * 
+          * @throws IOException if there is a network failure
+          */
+         void block(String user, String followee) throws IOException;
+
+      }
 
 Since network failure happens relatively frequently, you are asked to add the feature to automatically retry for up to three times for a network failure (indicated by an IOException). (Please note the three retries are in addition to the original failed invocation.) You are also asked to implement the following TweetStats service:
 
@@ -78,6 +78,7 @@ Since network failure happens relatively frequently, you are asked to add the fe
     
     
 Example Stats
+
 The following examples are assuming stats are reset() before running every single example. Additional test cases will be used for grading.
 
           Tweet message as tweet(“foo”,”barbar”). Then getLengthOfLongestTweet() returns 6.
